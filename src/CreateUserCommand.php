@@ -29,14 +29,4 @@ class CreateUserCommand extends Command
 
         return self::SUCCESS;
     }
-
-    protected function info($output, $message) : void
-    {
-        $output->writeln("<info>$message</info>");
-    }
-
-    protected function error($output, $message) : void
-    {
-        $output->writeln("<error>$message</error>");
-    }
 }
