@@ -1,5 +1,6 @@
 <?php
 
+use Curder\CreateUserCommand;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
