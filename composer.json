@@ -1,0 +1,11 @@
+{
+    "name": "curder/symfony-components",
+    "description": "Discover Symfony Components",
+    "authors": [
+        {
+            "name": "curder",
+            "email": "q.curder@gmail.com"
+        }
+    ],
+    "require": {}
+}
