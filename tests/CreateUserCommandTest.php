@@ -1,7 +1,9 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
+use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Command\Command;
+use Symfony\Component\Console\Tester\CommandTester;
 
 /**
  * Class CreateUserCommandTest
@@ -10,29 +12,32 @@ use Symfony\Component\Console\Command\Command;
  */
 class CreateUserCommandTest extends TestCase
 {
+    protected $command_name;
+    protected $tester;
+
+    protected function setUp() : void
+    {
+        parent::setUp();
+        $this->command_name = 'user:create';
+        // Set up your Application with your command.
+        $application = new Application();
+        // Here's where you would inject any mocked dependencies as needed.
+        $application->add(new CreateUserCommand);
+        $foundCommand = $application->find($this->command_name);
+        $this->tester = new CommandTester($foundCommand);
+    }
+
     /** @test */
     public function it_should_run_user_create_command(): void
     {
-        // For a command './demo user:create'.
-        $commandName = 'user:create';
-
-        // Set up your Application with your command.
-        $application = new \Symfony\Component\Console\Application();
-        // Here's where you would inject any mocked dependencies as needed.
-        $application->add(new CreateUserCommand);
-        $foundCommand = $application->find($commandName);
-
-        // Create a CommandTester with your Command class processed by your Application.
-        $tester = new \Symfony\Component\Console\Tester\CommandTester($foundCommand);
-
         // Execute the command. This example would be the equivalent of
         // './demo user:create Curder'
-        $code = $tester->execute([
-            'command' => $commandName,
+        $code = $this->tester->execute([
+            'command' => $this->command_name,
             'username' => 'Curder',
         ]);
 
-        $output = $tester->getDisplay();
+        $output = $this->tester->getDisplay();
 
         $this->assertStringContainsString('Username: Curder', $output);
         $this->assertEquals(Command::SUCCESS, $code);
@@ -44,22 +49,11 @@ class CreateUserCommandTest extends TestCase
         $this->expectException(\Symfony\Component\Console\Exception\RuntimeException::class);
         $this->expectErrorMessage('Not enough arguments (missing: "username")');
 
-        // For a command './demo user:create'.
-        $commandName = 'user:create';
-
-        // Set up your Application with your command.
-        $application = new \Symfony\Component\Console\Application();
-        // Here's where you would inject any mocked dependencies as needed.
-        $application->add(new CreateUserCommand);
-        $foundCommand = $application->find($commandName);
-
-        // Create a CommandTester with your Command class processed by your Application.
-        $tester = new \Symfony\Component\Console\Tester\CommandTester($foundCommand);
 
         // Execute the command. This example would be the equivalent of
         // './demo user:create'
-        $tester->execute([
-            'command' => $commandName,
+        $this->tester->execute([
+            'command' => $this->command_name,
         ]);
     }
 }
