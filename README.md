@@ -1,5 +1,7 @@
 ## [Console Command](https://symfony.com/doc/current/console.html)
 
+
+
 ```php
 <?php
 
@@ -35,3 +37,13 @@ class CreateUserCommand extends Command
         return self::SUCCESS;
     }
 ```
+
+## 单元测试
+
+```
+composer test
+```
+
+更多使用请[查看文档](https://symfony.com/doc/current/components/console.html)
+
+
