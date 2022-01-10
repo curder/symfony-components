@@ -1,4 +1,5 @@
 <?php
+
 namespace Curder;
 
 use Symfony\Component\Console\Command\Command;
@@ -16,7 +17,8 @@ class CreateUserCommand extends Command
              ->addArgument('username', InputArgument::REQUIRED, 'The username of the user.')
         ;
     }
-    protected function execute(InputInterface $input, OutputInterface $output) : int
+
+    protected function execute(InputInterface $input, OutputInterface $output): int
     {
         $output->writeln([
             'User Creator',

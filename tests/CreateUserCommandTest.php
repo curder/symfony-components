@@ -16,14 +16,14 @@ class CreateUserCommandTest extends TestCase
     protected $command_name;
     protected $tester;
 
-    protected function setUp() : void
+    protected function setUp(): void
     {
         parent::setUp();
         $this->command_name = 'user:create';
         // Set up your Application with your command.
         $application = new Application();
         // Here's where you would inject any mocked dependencies as needed.
-        $application->add(new CreateUserCommand);
+        $application->add(new CreateUserCommand());
         $foundCommand = $application->find($this->command_name);
         $this->tester = new CommandTester($foundCommand);
     }
