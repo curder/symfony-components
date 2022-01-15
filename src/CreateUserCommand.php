@@ -11,7 +11,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 
 class CreateUserCommand extends Command
 {
-    protected function configure()
+    protected function configure(): void
     {
         $this->setName('user:create') // 设置命令名称
              ->setDescription('Create new user') // 命令简短描述
@@ -38,6 +38,6 @@ class CreateUserCommand extends Command
         // 使用 getArgument() 取出参数值
         $output->writeln('Username: <info>' . $input->getArgument('username') . '<info>');
 
-        return self::SUCCESS;
+        return Command::SUCCESS;
     }
 }

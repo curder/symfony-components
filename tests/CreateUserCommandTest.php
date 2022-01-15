@@ -9,7 +9,7 @@ use Symfony\Component\Console\Tester\CommandTester;
 /**
  * Class CreateUserCommandTest
  *
- * @package \\${NAMESPACE}
+ * @package Curder
  */
 class CreateUserCommandTest extends TestCase
 {
