@@ -4,6 +4,7 @@
 
 require __DIR__.'/vendor/autoload.php';
 
+use Curder\CreateUserCommand;
 use Symfony\Component\Console\Application;
 
 $app = new Application('Symfony Console', '0.1.0');
