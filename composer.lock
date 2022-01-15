@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "759b67fd30d9a76e7a70458e5bfd9c1c",
+    "content-hash": "d419ac0c738b1a4a6ea528bf9fff59e4",
     "packages": [
         {
             "name": "psr/container",
@@ -4265,7 +4265,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "symfony/console": 0
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
