@@ -6,7 +6,7 @@
 
 require __DIR__.'/vendor/autoload.php';
 
-// create a variable, which could be anything!
+// 创建一个变量，它可以是任何东西！
 $someVar = ...;
 
 dump($someVar);
