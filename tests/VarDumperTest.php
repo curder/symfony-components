@@ -1,6 +1,5 @@
 <?php
 
-use JetBrains\PhpStorm\ArrayShape;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\VarDumper\Cloner\Stub;
 use Symfony\Component\VarDumper\Dumper\CliDumper;
@@ -11,7 +10,7 @@ class VarDumperTest extends TestCase
     use VarDumperTestTrait;
 
     /** @test */
-    public function it_with_default_dump_equals() : void
+    public function it_with_default_dump_equals(): void
     {
         $testedVar = [123, 'foo'];
         // 预期的转储内容没有默认 VarDumper 结构，因为测试中使用了自定义结构和标志
@@ -62,7 +61,7 @@ EOTXT;
         $this->assertDumpEquals($expectedDump, $testedVar);
     }
 
-    public function providerFormatResult() : array
+    public function providerFormatResult(): array
     {
         return [
             'using DUMP_LIGHT_ARRAY flag' => [

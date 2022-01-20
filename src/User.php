@@ -1,4 +1,5 @@
 <?php
+
 namespace Curder;
 
 class User
