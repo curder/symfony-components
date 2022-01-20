@@ -12,11 +12,15 @@
         "symfony/var-dumper": "@stable"
     },
     "require-dev": {
-        "phpunit/phpunit": "^9.5"
+        "phpunit/phpunit": "^9.5",
+        "friendsofphp/php-cs-fixer": "^3.5"
     },
     "autoload": {
         "psr-4": {
             "Curder\\": "src/"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
     }
 }
