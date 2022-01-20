@@ -1,11 +1,22 @@
 {
-    "name": "curder/symfony-components",
-    "description": "Discover Symfony Components",
+    "name": "curder/symfony-components-var-dumper",
+    "description": "Discover Symfony Components for VarDumper",
     "authors": [
         {
             "name": "curder",
             "email": "q.curder@gmail.com"
         }
     ],
-    "require": {}
+    "require": {
+        "php": ">=8.0.2",
+        "symfony/var-dumper": "@stable"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Curder\\": "src/"
+        }
+    }
 }
