@@ -1,3 +1,19 @@
-# Symfony Components
+# [Symfony VarDumper](https://symfony.com/doc/current/components/var_dumper.html)
 
-* [Symfony Console](https://github.com/curder/symfony-components/tree/console)
+
+```php
+<?php
+
+require __DIR__.'/vendor/autoload.php';
+
+// create a variable, which could be anything!
+$someVar = ...;
+
+dump($someVar);
+```
+
+## 单元测试
+
+```php
+composer test
+```
